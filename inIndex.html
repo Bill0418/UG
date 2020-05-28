@@ -1,0 +1,144 @@
+<html lang="en">
+
+	<head>
+		
+		<title>宇梏企業進銷存系統</title>
+		<meta charset="utf-8">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		
+		<!-- google fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+		
+		<style>
+			
+			body {
+				margin: 0;
+				text-align: center;
+			}
+			
+			.ChText {
+				font-family: 'Noto Sans TC', sans-serif;
+			}
+
+			/* Style the header */
+			header {
+				background-color: #666;
+				padding: 5px;
+				text-align: center;
+				color: white;
+			}
+
+			section {
+				padding: 5px;
+				height: 80%;
+				text-align: center;
+			}
+
+			/* Style the footer */
+			footer {
+				background-color: #666;
+				padding: 10px;
+				text-align: center;
+				color: white;
+			}
+						
+			div.grid{
+				 width: 200px;
+				 height: 200px;
+				 margin: 5px;
+				 padding: 50px;
+				 text-align: center;
+			}
+			
+		</style>
+		
+	</head>
+
+	<body>
+		
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+			  <a class="navbar-brand text-white ChText" href="UGindex.html">宇梏企業進銷存系統</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+				  <li class="nav-item active">
+					<a class="nav-link text-white" href="UGindex.html">首頁<span class="sr-only">(current)</span></a>
+				  </li>				  
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  進貨
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="in1.html">進貨單</a>
+					  <a class="dropdown-item" href="#">採購單</a>
+					  <a class="dropdown-item" href="#">退貨單</a>
+					  <a class="dropdown-item" href="#">託外發料單</a>
+					  <a class="dropdown-item" href="#">委外加工單</a>
+					</div>
+				  </li>
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  銷售
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="#">客戶報價單</a>
+					  <a class="dropdown-item" href="#">訂單</a>
+					  <a class="dropdown-item" href="#">出貨單</a>
+					  <a class="dropdown-item" href="#">銷貨退回單</a>
+					  <a class="dropdown-item" href="#">收款對帳單明細表</a>
+					</div>
+				  </li>
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  存貨
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="#">缺料單</a>
+					  <a class="dropdown-item" href="#">領料單</a>					  
+					</div>
+				  </li>
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+				  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				</form>
+			  </div>
+			</nav>
+		</header>
+		
+		<section>
+		
+			<div class="container">
+				<div class="list-group">
+					<a href="#" class="list-group-item list-group-item-action active list-group-item-secondary">
+						進貨
+					</a>
+					<a href="in1.html" class="list-group-item list-group-item-action">進貨單</a>
+					<a href="#" class="list-group-item list-group-item-action">採購單</a>
+					<a href="#" class="list-group-item list-group-item-action">退貨單</a>	
+					<a href="#" class="list-group-item list-group-item-action">託外發料單</a>
+					<a href="#" class="list-group-item list-group-item-action">委外加工單</a>						  
+				</div>
+			</div>
+			
+		</section>
+		
+		<footer>
+			<p>APP Course Example 2019.10.17</p>
+		</footer>
+		
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		
+	</body>
+
+</html>
