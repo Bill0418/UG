@@ -15,7 +15,6 @@
 			
 			body {
 				margin: 0;
-				text-align: center;
 			}
 			
 			.ChText {
@@ -33,7 +32,6 @@
 			section {
 				padding: 5px;
 				height: 80%;
-				text-align: center;
 			}
 
 			/* Style the footer */
@@ -50,14 +48,12 @@
 				 margin: 5px;
 				 padding: 50px;
 				 text-align: center;
-			}
-			
+			}			
 		</style>
 		
 	</head>
 
 	<body>
-		
 		<header>
 			<nav class="navbar navbar-expand-lg navbar-light bg-dark">
 			  <a class="navbar-brand text-white ChText" href="UGindex.html">宇梏企業進銷存系統</a>
@@ -113,20 +109,80 @@
 		</header>
 		
 		<section>
-		
-			<div class="container">
-				<div class="list-group">
-					<a href="#" class="list-group-item list-group-item-action active list-group-item-secondary">
-						進貨
-					</a>
-					<a href="in1_list.html" class="list-group-item list-group-item-action">進貨單</a>
-					<a href="in2_list.html" class="list-group-item list-group-item-action">採購單</a>
-					<a href="in3_list.html" class="list-group-item list-group-item-action">退貨單</a>	
-					<a href="in4_list.html" class="list-group-item list-group-item-action">託外發料單</a>
-					<a href="in5_list.html" class="list-group-item list-group-item-action">委外加工單</a>						  
+			<div>
+				<div class="row">
+					<div class="col-2">
+						<div class="list-group">
+							<a href="#" class="list-group-item list-group-item-action active list-group-item-secondary">
+								銷貨
+							</a>
+							<a href="out1_list.html" class="list-group-item list-group-item-action">客戶報價單</a>
+							<a href="out2_list.html" class="list-group-item list-group-item-action">訂單</a>
+							<a href="out3_list.html" class="list-group-item list-group-item-action">出貨單</a>	
+							<a href="out4_list.html" class="list-group-item list-group-item-action">銷貨退回單</a>
+							<a href="out5_list.html" class="list-group-item list-group-item-action">收款對帳單明細表</a>						  
+						</div>
+					</div>
+					<div class="col-9">
+						<div class = "container-fluid justify-content-start">
+							<h1 class = "ChText">客戶報價單</h1>
+							<div class="dropdown-divider"></div>
+							<form>
+								<div class="form-group row">
+									<label for="inputEmail4" class="col-form-label">日期</label>
+									<div class="col-md-3">
+									  <input type="email" class="form-control" id="inputEmail4">
+									</div>
+									<label for="inputPassword4" class="col-form-label">客戶名稱</label>
+									<div class="col-md-3">
+									  <input type="password" class="form-control" id="inputPassword4">
+									</div>
+									<div class="col-md-1">
+									  <button type="submit" class="btn btn-success">查詢</button>
+									</div>
+									<div class="col-md-1">
+									  <button type="submit" class="btn btn-info">新增</button>
+									</div>
+								</div>
+							</form>
+							<table class="table">
+							    <thead>
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">日期</th>
+										<th scope="col">客戶名稱</th>
+										<th scope="col">單據編號</th>
+										<th scope="col"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>2020/05/28</td>
+										<td>興勤</td>
+										<td>20200528001</td>
+										<td><button type="submit" class="btn btn-info">修改</button> <button type="submit" class="btn btn-danger">刪除</button></td>
+									</tr>
+									<tr>
+									    <th scope="row">2</th>
+										<td>2020/05/25</td>
+										<td>宇梏</td>
+										<td>20200525002</td>
+										<td><button type="submit" class="btn btn-info">修改</button> <button type="submit" class="btn btn-danger">刪除</button></td>
+									</tr>
+									<tr>
+									    <th scope="row">3</th>
+										<td>2020/05/25</td>
+										<td>日月光</td>
+										<td>20200525001</td>
+										<td><button type="submit" class="btn btn-info">修改</button> <button type="submit" class="btn btn-danger">刪除</button></td>
+									</tr>
+							    </tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 			</div>
-			
 		</section>
 		
 		<footer>
@@ -142,3 +198,4 @@
 	</body>
 
 </html>
+
