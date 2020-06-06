@@ -4,4 +4,5 @@ let bootstrapMaterialDatePickerOption = { time: false, nowButton: true, clearBut
 $(function () {
 	$('#inputcalendar').bootstrapMaterialDatePicker(bootstrapMaterialDatePickerOption);
 	$('#inputcalendar_1').bootstrapMaterialDatePicker(bootstrapMaterialDatePickerOption);
+	$('#inputcalendar_2').bootstrapMaterialDatePicker(bootstrapMaterialDatePickerOption);
 });

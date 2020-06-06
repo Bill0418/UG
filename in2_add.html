@@ -291,7 +291,7 @@
 									<td width="10%">
 									<label for="inputprice" class="col-form-label">單價</label>
 									</td>
-									<td width="10%">
+									<td colspan = "2">
 									<label for="input_num_cop" class="col-form-label">公司單號</label>
 									</td>
 									<td></td>
@@ -300,9 +300,7 @@
 									<tr>
 									<!--序-->
 									<td>
-									<div id="inputorder" class="form-control" >
-									<script  src="myjs/submit.js"></script>
-									</div> 
+									<input type="hidden" class="form-control">
 									</td>
 									<!--品名-->
 									<td>
@@ -329,7 +327,7 @@
 									<input type="text" readonly class="form-control" id="inputprice">
 									</td>
 									<!--公司單號-->
-									<td>
+									<td width="10%">
 									<input type="text" class="form-control" id="input_num_cop">
 									</td>
 									<!--送出-->
@@ -340,6 +338,9 @@
 									<tr>
 								</tbody>
 							</table>
+							
+							<table id="toDoList" class="table"></table>
+							<script  src="myjs/submit.js"></script>
 							
 							<table class="table" >
 								<thead>

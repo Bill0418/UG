@@ -16,28 +16,7 @@
 		
 		<script src="jquery.js"></script>
 		
-		<script>
 		
-		$(document).ready(function(){
-		  var temp = 0;
-		  $("#add").click(function(){
-			temp += 1;
-			var inputproduct = $("#inputproduct").val();
-			var inputsize = $("#inputsize").val();
-			var inputcount = $("#inputcount").val();
-			$("#toDoList").append(
-			  `<tr><td>${temp}</td><td>${inputproduct}</td><td>${inputsize}</td><td>${inputcount}</td><td><button class="delete">Delete</button></td></tr>`
-			);
-			
-			$(".delete").each(function(){
-			  $(this).click(function(){
-			   $(this).closest('tr').remove(); 
-			  })
-			})
-		  });
-		});
-		
-		</script>
 		
 		
 		<style>
@@ -314,7 +293,8 @@
 									<!--序-->
 									<td>
 									<input type="hidden" class="form-control">
-									</div> 
+									
+									
 									</td>
 									<!--品名-->
 									<td>
@@ -351,8 +331,12 @@
 									</tr>
 								</tbody>
 							</table>
+							</div> 
+
+
 							
 							<table id="toDoList" class="table"></table>
+							<script  src="myjs/submit.js"></script>
 							
 							<table class="table" >
 								<thead>
