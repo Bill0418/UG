@@ -1,0 +1,423 @@
+<html lang="en">
+
+	<head>
+		
+		<title>宇梏企業進銷存系統</title>
+		<meta charset="utf-8">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<!-- Bootstrap CSS calendar -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<!-- google fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+		<!-- jquery -->
+		<script type="text/javascript" src="http://demo.jb51.net/jslib/jquery/jquery.js"></script>
+		
+		<style>
+			
+			body {
+				margin: 0;
+			}
+			
+			.ChText {
+				font-family: 'Noto Sans TC', sans-serif;
+			}
+
+			/* Style the header */
+			header {
+				background-color: #666;
+				padding: 5px;
+				text-align: center;
+				color: white;
+			}
+
+			section {
+				padding: 5px;
+				height: 80%;
+			}
+			
+			select {
+			  width: 100%;
+			  padding: 16px 20px;
+			  border: 2px solid #ced4da;
+			  border-radius: 4px;
+			  background-color: white;
+			}
+
+			/* Style the footer */
+			footer {
+				background-color: #666;
+				padding: 10px;
+				text-align: center;
+				color: white;
+			}
+						
+			div.grid{
+				 width: 200px;
+				 height: 200px;
+				 margin: 5px;
+				 padding: 50px;
+				 text-align: center;
+			}		
+
+			input{
+			
+			}
+			
+		</style>
+		
+		
+		
+		
+		<style type="text/css">
+        .dtp-buttons > button.btn {
+            border: none;
+            border-radius: 2px;
+            position: relative;
+            box-shadow: none;
+            color: rgba(0,0,0, 0.87);
+            padding: 5px 16px;
+            font-size: 12px;
+            margin: 10px 1px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            will-change: box-shadow, transform;
+            transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            background: transparent;
+        }
+
+            .dtp-buttons > button.btn:hover,
+            .dtp-buttons > button.btn:focus {
+                background-color: rgba(153, 153, 153, 0.2);
+            } 
+
+           
+         .dtp-picker-calendar > table {
+            width: 100%;
+        } 
+		
+		*{margin: 0px;padding: 0px;} 
+		.cont{width:600px; margin:60px auto 0px;} 
+		#test .item{padding: 10px 6px;border-bottom: 1px solid #666666;} 
+		#test .serial{margin-right: 20px;} 
+		#test .del{padding: 6px;margin-left: 30px;} 
+		
+		table{
+			padding-right:2px;
+		}
+		
+		.label{width:100px;display:inline-block;}
+		.col-form-label
+
+		
+		</style>
+		
+	
+	<!-- calendar -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-material-datetimepicker.css">
+	<!--引用jQuery-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<!--此plugin會影響語系-->
+	<script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.js"></script>
+	<!--引用plugin的js(自行到作者GitHub下載)-->
+	<script src="js/bootstrap-material-datetimepicker.js"></script>
+	
+	</head>
+
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+			  <a class="navbar-brand text-white ChText" href="UGindex.html">宇梏企業進銷存系統</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+				  <li class="nav-item active">
+					<a class="nav-link text-white" href="UGindex.html">首頁<span class="sr-only">(current)</span></a>
+				  </li>				  
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  進貨
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="in1_list.html">進貨單</a>
+					  <a class="dropdown-item" href="in2_list.html">採購單</a>
+					  <a class="dropdown-item" href="in3_list.html">退貨單</a>
+					  <a class="dropdown-item" href="in4_list.html">託外發料單</a>
+					  <a class="dropdown-item" href="in5_list.html">委外加工單</a>
+					</div>
+				  </li>
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  銷售
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="out1_list.html">客戶報價單</a>
+					  <a class="dropdown-item" href="out2_list.html">訂單</a>
+					  <a class="dropdown-item" href="out3_list.html">出貨單</a>
+					  <a class="dropdown-item" href="out4_list.html">銷貨退回單</a>
+					  <a class="dropdown-item" href="out5_list.html">收款對帳單明細表</a>
+					</div>
+				  </li>
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  存貨
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="stock1_list.html">缺料單</a>
+					  <a class="dropdown-item" href="stock2_list.html">領料單</a>					  
+					</div>
+				  </li>
+				</ul>
+			  </div>
+			</nav>
+		</header>
+		
+		
+		<section>
+			<div>
+				<div class="row">
+					<div class="col-2">
+						<div class="list-group">
+							<a href="#" class="list-group-item list-group-item-action active list-group-item-secondary">
+								進貨
+							</a>
+							<a href="in1_list.html" class="list-group-item list-group-item-action">進貨單</a>
+							<a href="in2_list.html" class="list-group-item list-group-item-action">採購單</a>
+							<a href="in3_list.html" class="list-group-item list-group-item-action">退貨單</a>	
+							<a href="in4_list.html" class="list-group-item list-group-item-action">託外發料單</a>
+							<a href="in5_list.html" class="list-group-item list-group-item-action">委外加工單</a>						  
+						</div>
+					</div>
+					<div class="col-9">
+						<div class = "container-fluid justify-content-start">
+							<h1 class = "ChText">託外發料單</h1>
+							
+							<table class="table">
+								<div class="form-group row">
+								<thead>
+									<td colspan = "4">
+									<h4 class = "ChText">⊙廠商基本資料</h4>
+									</td>
+									<td><label class="col-form-label"> </label></td>
+									<div class="col-md-3"><td></td></div>
+									<td><label class="col-form-label"> </label></td>
+									<div class="col-md-3"><td></td></div>
+								</thead>
+								<tbody>
+									<tr>
+										<td width = "20%"><label for="inputcalendar" class="col-form-label">製表日期</label></td>
+										<td width = "30%">
+											<input type="text" class="form-control " placeholder="請選擇日期" id="inputcalendar" />
+										<script src="myjs/calendar.js"></script>
+										</td>
+										<td width = "25%"><label for="inputnum1" class="col-form-label">領料單別</label></td>
+										<td width = "25%">
+											<input type="text" class="form-control" id="inputnum1">
+										</td>
+									</tr>
+									<tr>
+										<td><label for="inputname" class="col-form-label">廠別</label></td>
+										<td>
+											<select class="form-control">
+												<option>A 廠</option>
+											</select>
+										</td>
+										<td><label for="inputnum2" class="col-form-label">領料單號</label></td>
+										<td>
+											<input type="text" readonly class="form-control" id="inputnum2">
+										</td>
+									</tr>
+									<tr>
+										<td><label for="inputnum3" class="col-form-label">生產線別</label></td>
+										<td>
+											<input type="text" readonly class="form-control" id="inputnum3">
+										</td>
+										<td><label for="inputname_1" class="col-form-label">加工廠商</label></td>
+										<td>
+											<select class="form-control">
+												<option>天瑞科技工業股份公司</option>
+											</select>
+										</td>
+									</tr>	
+									<tr>
+										<td width = "20%"><label for="inputcalendar_1" class="col-form-label">單據日期</label></td>
+										<td width = "30%">
+											<input type="text" class="form-control " placeholder="請選擇日期" id="inputcalendar_1" />
+											<script src="myjs/calendar.js"></script>
+										</td>
+										<td><label for="input_text" class="col-form-label">單據備註</label></td>
+										<td colspan = "3">
+											<textarea id="input_text" class="form-control" rows="1" cols="80"></textarea>
+										</td>
+									</tr>
+								</tbody>	
+								</div>
+							</table>
+							
+							<table class = "table">
+								<thead>
+									<tr>
+									<td colspan="6">
+										<h4 class = "ChText">⊙訂單規格</h4>
+									</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+									<td width="10%">
+									<label for="inputorder" class="col-form-label">序</label>
+									</td>
+									<td width="30%">
+									<label for="inputproduct_num" class="col-form-label">材料單號</label><br>
+									<label for="inputprodname" class="col-form-label">品名</label><br>
+									<label for="inputsize" class="col-form-label">規格</label>
+									</td>
+									<td width="10%">
+									<label for="input_unit" class="col-form-label">單位</label>
+									</td>
+									<td width="30%">
+									<label for="inputcount" class="col-form-label">領料數量</label><br>
+									<label for="input_stock_num" class="col-form-label">庫別</label><br>
+									<label for="input_stock_name" class="col-form-label">庫別名稱</label>
+									</td>
+									<td width="20%">
+									<label for="input_produce_num" class="col-form-label">製令編號</label><br>
+									<label for="input_produce" class="col-form-label">製程</label><br>
+									<label for="input_stock" class="col-form-label">儲存位置</label>
+									</td>
+									<td></td>
+									<tr>
+									
+									<tr>
+									<!--序-->
+									<td>
+									<div id="inputorder" class="form-control" >
+									</div> 
+									</td>
+									<!--材料單號、品名、規格-->
+									<td>
+									<form name="myForm">
+									<select  class="form-control" name="main_member" onChange="part1(this.selectedIndex);" id = "inputproduct_num">
+									<option value="">材料單號
+									<option value="材料單號1">材料單號1
+									<option value="材料單號2">材料單號2
+									</select>
+									<select class="form-control" name="first_member" id = "inputprodname">
+									<option value="">請由上方選取材料單號</select>
+									<select class="form-control" name="member" id = "inputsize">
+									<option value="">請由上方選取品名</select>
+									
+									<script src="myjs/selectlist.js"></script>
+									
+									</form></td>
+									
+									<!--單位-->
+									<td>
+									<input type="text" class="form-control" id="inputsize">
+									</td>
+									
+									
+									<!--領料數量、庫別、庫別名稱-->
+									<td>
+									<input type="number" class="form-control" id="inputcount">
+									<form name="myForm1">
+									<select  class="form-control" onChange="renew1(this.selectedIndex);" id = "input_stock_num">
+									<option value="">庫別
+									<option value="庫別1">庫別1
+									<option value="庫別2">庫別2
+									</select>
+									<select class="form-control" name="member" id = "input_stock_name">
+									<option value="">請由上方選取庫別</select>
+									<script src="myjs/selectlist_stock.js"></script>
+									</form>
+									</td>
+									
+									<!--製令編號、製程、儲存位置-->
+									<td>
+									
+									<form name="myForm2">
+									<select  class="form-control" onChange="renew1(this.selectedIndex);" id = "input_produce_num">
+									<option value="">製令編號
+									<option value="製令編號1">製令編號1
+									<option value="製令編號2">製令編號2
+									</select>
+									<select class="form-control" name="member" id = "input_produce">
+									<option value="">請由上方選取製令編號</select>
+									<script src="myjs/selectlist_procedure.js"></script>
+									</form>
+									<input type="text" class="form-control" id="input_stock">
+									</td>
+									<!--送出-->
+									<td>
+										<input id="submit" type="button" class="btn btn-primary mb-2" value="Submit">
+										<script src="myjs/submit.js"></script>
+									</td>
+									<tr>
+								</tbody>
+							</table>
+							
+							<table class="table" >
+								<thead>
+									<tr>
+									<td colspan="6">
+										<h4 class = "ChText">⊙總計</h4>
+									</td>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<tr>
+										<td width = "20%"><label for="inputtotal" class="col-form-label">合計金額</label></td>
+										<td>
+											<input type="text" readonly class="form-control" id="inputtotal">
+										</td>
+										<td width = "10%"></td>
+										<td width = "20%"><label for="inputax" class="col-form-label">營業稅</label></td>
+										<td>
+											<input type="text" readonly class="form-control" id="inputtax">
+										</td>
+									</tr>
+									<tr>
+										<td width = "20%"><label for="input_in_amount" class="col-form-label">進貨總額</label></td>
+										<td>
+											<input type="text" readonly class="form-control" id="input_in_amount">
+										</td>
+										<td colspan = "3"></td>
+										
+									</tr>
+									
+										
+								</tbody>
+							</table>
+							
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--
+		<footer>
+			<p>APP Course Example 2019.10.17</p>
+		</footer>
+		-->
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<!--
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		-->
+	</body>
+
+</html>
+

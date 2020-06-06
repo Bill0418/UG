@@ -1,0 +1,43 @@
+ 
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>each和live实现自动编号</title> 
+<script type="text/javascript" src="http://demo.jb51.net/jslib/jquery/jquery.js"></script> 
+<style type="text/css"> 
+*{margin: 0px;padding: 0px;} 
+.cont{width:600px; margin:60px auto 0px;} 
+#test .item{padding: 10px 6px;border-bottom: 1px solid #666666;} 
+#test .serial{margin-right: 20px;} 
+#test .del{padding: 6px;margin-left: 30px;} 
+</style> 
+</head> 
+<body> 
+<div class="cont"> 
+<input id="btn" type="button" value="增加"> 
+<div id="test"></div> 
+</div> 
+<script type="text/javascript"> 
+$(function () { 
+var num = 1; 
+var test = $("#test"); 
+$("#btn").click(function () { 
+test.append("<div class='item'><span class='serial'></span>"); 
+var items = test.find(".item"); 
+var serials = test.find(".serial"); 
+items.attr("opt", ""); 
+serials.html(""); 
+$.each(items, function (k, v) { 
+$(this).attr("opt", "mopt" + k); 
+serials.eq(k).html(k); 
+}); 
+num++; 
+}); 
+
+
+}); 
+</script> 
+</body> 
+</html> 
+
+
