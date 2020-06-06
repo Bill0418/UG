@@ -111,10 +111,6 @@
 			padding-right:2px;
 		}
 		
-		.label{width:100px;display:inline-block;}
-		.col-form-label
-
-		
 		</style>
 		
 	
@@ -199,13 +195,13 @@
 					</div>
 					<div class="col-9">
 						<div class = "container-fluid justify-content-start">
-							<h1 class = "ChText">委外加工單</h1>
+							<h1 class = "ChText">客戶報價單</h1>
 							
 							<table class="table">
 								<div class="form-group row">
 								<thead>
 									<td colspan = "4">
-									<h4 class = "ChText">⊙廠商基本資料</h4>
+									<h4 class = "ChText">⊙客戶基本資料</h4>
 									</td>
 									<td><label class="col-form-label"> </label></td>
 									<div class="col-md-3"><td></td></div>
@@ -214,27 +210,51 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td width = "20%"><label for="inputcalendar" class="col-form-label">製表日期</label></td>
-										<td width = "30%">
-											<input type="text" class="form-control " placeholder="請選擇日期" id="inputcalendar" />
-											
+										<td><label for="inputcalendar" class="col-form-label">單據日期</label></td>
+										<div class="col-md-3"><td>
+											<input type="text" class="form-control" placeholder="請選擇日期" id="inputcalendar" />
 											<script src="myjs/calendar.js"></script>
-										</td>
+										</td></div>
+										<td><label for="inputnum1" class="col-form-label">單據編號</label></td>
+										<div class="col-md-3"><td>
+											<input type="text" class="form-control" id="inputnum1">
+										</td></div>
 									</tr>
-									<tr>													
-										<td><label for="inputname_1" class="col-form-label">加工廠商</label></td>
-										<td>
+									<tr>
+										<td><label for="inputname" class="col-form-label">客戶名稱</label></td>
+										<div class="col-md-3"><td>
 											<select class="form-control">
 												<option>天瑞科技工業股份公司</option>
 											</select>
-										</td>
-										<td><label for="inputphone" class="col-form-label">廠商電話</label></td>
+										</td></div>
+										<td><label for="inputnum2" class="col-form-label">客戶編號</label></td>
+										<div class="col-md-3"><td>
+											<input type="text" readonly class="form-control" id="inputnum2">
+										</td></div>
+									</tr>
+									<tr>
+										<td><label for="inputphone" class="col-form-label">電話號碼</label></td>
 										<div class="col-md-3"><td>
 											<input type="text" readonly class="form-control" id="inputphone">
 										</td></div>
+										<td><label for="inputtel" class="col-form-label">傳真號碼</label></td>
+										<div class="col-md-3"><td>
+											<input type="text" readonly class="form-control" id="inputtel">
+										</td></div>
+										<td><label class="col-form-label"> </label></td>
+									</tr>	
+									<tr>
+										<td><label for="input_text" class="col-form-label">單據備註</label></td>
+										<td>
+											<textarea id="input_text" class="form-control" rows="1" ></textarea>
+										</td>
+										<td><label for="inputcalendar_1" class="col-form-label">有效日期</label></td>
+										<div class="col-md-3"><td>
+											<input type="text" class="form-control" placeholder="請選擇日期" id="inputcalendar_1" />
+											<script src="myjs/calendar.js"></script>
+										</td></div>
+										
 									</tr>
-									
-									
 								</tbody>	
 								</div>
 							</table>
@@ -243,37 +263,32 @@
 								<thead>
 									<tr>
 									<td colspan="6">
-										<h4 class = "ChText">⊙訂單規格</h4>
+										<h4 class = "ChText">⊙商品規格</h4>
 									</td>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-									<td>
+									<td width="10%">
 									<label for="inputorder" class="col-form-label">序</label>
 									</td>
-									<td>
-									<label for="input_procedure" class="col-form-label">加工<br>過程</label>
+									<td width="30%">
+									<label for="inputproduct" class="col-form-label">品名</label>
 									</td>
-									<td>
-									<label for="inputsize" class="col-form-label">規格<br>尺寸</label>
+									<td width="30%">
+									<label for="inputsize" class="col-form-label">規格</label>
 									</td>
-									<td>
+									<td width="10%">
 									<label for="inputcount" class="col-form-label">數量</label>
 									</td>
-									<td >
+									<td width="10%">
 									<label for="inputprice" class="col-form-label">單價</label>
 									</td>
-									<td>
-									<label for="inputsum" class="col-form-label">金額</label>
+									<td width="10%">
+									<label for="inputsum" class="col-form-label">小計</label>
 									</td>
-									<td >
-									<label for="inputtext" class="col-form-label">備註</label><br>
-									</td>
-									<td><label for="inputcalendar_1" class="col-form-label">完成日期</label></td>
-										
+									<td></td>
 									</tr>
-									
 									<tr>
 									<!--序-->
 									<td>
@@ -281,14 +296,22 @@
 									<script  src="myjs/submit.js"></script>
 									</div> 
 									</td>
-									<!--加工過程-->
+									<!--品名-->
 									<td>
-									<input type="text" class="form-control" id="input_procedure">
+									<form name="myForm">
+									<select  class="form-control" onChange="renew(this.selectedIndex);" id = "inputproduct">
+									<option value="">品名
+									<option value="外電">外電
+									<option value="油壓缸">油壓缸
+									</select>
+									<script  src="myjs/selectlist_prod.js"></script>
 									</td>
-									<!--規格尺寸-->
+									<!--規格-->
 									<td>
-									<input type="text" class="form-control" id="inputsize">
+									<select class="form-control" name="member" id = "inputsize">
+									<option value="">請由左方選取品名</select>
 									</td>
+									</form>
 									<!--數量-->
 									<td>
 									<input type="number" class="form-control" id="inputcount">
@@ -297,18 +320,9 @@
 									<td>
 									<input type="text" readonly class="form-control" id="inputprice">
 									</td>
-									<!--金額-->
+									<!--小計-->
 									<td>
 									<input type="text" class="form-control" id="inputsum">
-									</td>
-									<!--備註-->
-									<td >
-										<textarea id="inputtel" class="form-control" rows="1" cols="15"></textarea>
-									</td>
-									<!--完成日期-->
-									<td>
-										<input type="text" class="form-control " placeholder="請選擇日期" id="inputcalendar_1" />
-										<script src="myjs/calendar.js"></script>
 									</td>
 									<!--送出-->
 									<td>
@@ -319,7 +333,33 @@
 								</tbody>
 							</table>
 							
-							
+							<table class="table" >
+								<thead>
+									<tr>
+									<td colspan="6">
+										<h4 class = "ChText">⊙總計</h4>
+									</td>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<tr>
+										<td ><label for="inputtotal" class="col-form-label">合計金額</label></td>
+										<td width = "20%">
+											<input type="text" readonly class="form-control" id="inputtotal">
+										</td>
+										<td ><label for="inputax" class="col-form-label">營業稅</label></td>
+										<td width = "20%">
+											<input type="text" readonly class="form-control" id="inputtax">
+										</td>
+										<td ><label for="inputamount" class="col-form-label">總計金額</label></td>
+										<td width = "20%">
+											<input type="text" readonly class="form-control" id="inputamount">
+										</td>
+									</tr>
+																			
+								</tbody>
+							</table>
 							
 							
 						</div>

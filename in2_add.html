@@ -217,13 +217,7 @@
 											<script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.js"></script>
 											<!--引用plugin的js(自行到作者GitHub下載)-->
 											<script src="js/bootstrap-material-datetimepicker.js"></script>
-											<script type="text/javascript">
-											//當做全域參數使用
-											let bootstrapMaterialDatePickerOption = { time: false, nowButton: true, clearButton: true, lang: 'zh-tw', format: 'YYYY/MM/DD' };
-											$(function () {
-												$('#inputcalendar').bootstrapMaterialDatePicker(bootstrapMaterialDatePickerOption);
-											});
-											</script>
+											<script src="myjs/calendar.js"></script>
 										</td>
 										<td width = "25%"><label for="inputnum1" class="col-form-label">單據編號</label></td>
 										<td width = "25%">
@@ -307,6 +301,7 @@
 									<!--序-->
 									<td>
 									<div id="inputorder" class="form-control" >
+									<script  src="myjs/submit.js"></script>
 									</div> 
 									</td>
 									<!--品名-->

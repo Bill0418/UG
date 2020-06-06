@@ -1,4 +1,4 @@
-function () { 
+$(function () { 
 var porduct = $("#inputorder"); 
 var test = $("#inputorder"); 
 $("#submit").click(function () { 
@@ -12,4 +12,6 @@ $(this).attr("opt", "mopt" + k);
 serials.eq(k).html(k); 
 }); 
 num++; 
-}); 
+}); }); 
+
+
