@@ -14,6 +14,32 @@
 		<!-- jquery -->
 		<script type="text/javascript" src="http://demo.jb51.net/jslib/jquery/jquery.js"></script>
 		
+		<script src="jquery.js"></script>
+		
+		<script>
+		
+		$(document).ready(function(){
+		  var temp = 0;
+		  $("#add").click(function(){
+			temp += 1;
+			var inputproduct = $("#inputproduct").val();
+			var inputsize = $("#inputsize").val();
+			var inputcount = $("#inputcount").val();
+			$("#toDoList").append(
+			  `<tr><td>${temp}</td><td>${inputproduct}</td><td>${inputsize}</td><td>${inputcount}</td><td><button class="delete">Delete</button></td></tr>`
+			);
+			
+			$(".delete").each(function(){
+			  $(this).click(function(){
+			   $(this).closest('tr').remove(); 
+			  })
+			})
+		  });
+		});
+		
+		</script>
+		
+		
 		<style>
 			
 			body {
@@ -217,7 +243,7 @@
 										</td></div>
 										<td><label for="inputnum1" class="col-form-label">單據編號</label></td>
 										<div class="col-md-3"><td>
-											<input type="text" class="form-control" id="inputnum1">
+											<input type="text" readonly class="form-control" id="inputnum1">
 										</td></div>
 									</tr>
 									<tr>
@@ -287,8 +313,7 @@
 									<tr>
 									<!--序-->
 									<td>
-									<div id="inputorder" class="form-control" >
-									<script  src="myjs/submit.js"></script>
+									<input type="hidden" class="form-control">
 									</div> 
 									</td>
 									<!--品名-->
@@ -317,16 +342,17 @@
 									</td>
 									<!--小計-->
 									<td>
-									<input type="text" class="form-control" id="inputsum">
+									<input type="hidden" class="form-control" id="inputsum">
 									</td>
 									<!--送出-->
 									<td>
-										<input id="submit" type="button" class="btn btn-primary mb-2" value="Submit">
-										<script src="myjs/submit.js"></script>
+										<input id="add" type="button" class="btn btn-primary mb-2" value="ADD">
 									</td>
 									</tr>
 								</tbody>
 							</table>
+							
+							<table id="toDoList" class="table"></table>
 							
 							<table class="table" >
 								<thead>
