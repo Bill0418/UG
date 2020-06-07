@@ -177,31 +177,27 @@
 			</nav>
 		</header>
 		
-		
 		<section>
 			<div>
 				<div class="row">
 					<div class="col-2">
 						<div class="list-group">
 							<a href="#" class="list-group-item list-group-item-action active list-group-item-secondary">
-								銷貨
+								存貨
 							</a>
-							<a href="out1_list.html" class="list-group-item list-group-item-action">客戶報價單</a>
-							<a href="out2_list.html" class="list-group-item list-group-item-action">訂單</a>
-							<a href="out3_list.html" class="list-group-item list-group-item-action">出貨單</a>	
-							<a href="out4_list.html" class="list-group-item list-group-item-action">銷貨退回單</a>
-							<a href="out5_list.html" class="list-group-item list-group-item-action">收款對帳單明細</a>						  
+							<a href="stock1_list.html" class="list-group-item list-group-item-action">缺料單</a>
+							<a href="stock2_list.html" class="list-group-item list-group-item-action">領料單</a>
 						</div>
 					</div>
 					<div class="col-9">
 						<div class = "container-fluid justify-content-start">
-							<h1 class = "ChText">銷貨退回單</h1>
+							<h1 class = "ChText">缺料單</h1>
 							
 							<table class="table">
 								<div class="form-group row">
 								<thead>
 									<td colspan = "4">
-									<h4 class = "ChText">⊙客戶基本資料</h4>
+									<h4 class = "ChText">⊙缺料申請</h4>
 									</td>
 									<td><label class="col-form-label"> </label></td>
 									<div class="col-md-3"><td></td></div>
@@ -210,67 +206,25 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td width="20%"><label for="inputcalendar" class="col-form-label">單據日期</label></td>
-										<td width="20%">
+										<td><label for="inputcalendar" class="col-form-label">單據日期</label></td>
+										<div class="col-md-3"><td>
 											<input type="text" class="form-control" placeholder="請選擇日期" id="inputcalendar" />
 											<script src="myjs/calendar.js"></script>
-										</td>
-										<td width="20%">
-										</td>
-										<td width="20%"><label for="inputnum1" class="col-form-label">單據編號</label></td>
-										<td width="20%">
-											<input type="text" readonly class="form-control" id="inputnum1">
+										</td></div>
+										<td><label for="inputnum1" class="col-form-label">單據編號</label></td>
+										<div class="col-md-3"><td>
+											<input type="text" class="form-control" id="inputnum1">
 										</td></div>
 									</tr>
 									<tr>
-										<td><label for="inputname" class="col-form-label">客戶名稱</label></td>
-										<div class="col-md-3"><td>
+										<td><label for="inputname" class="col-form-label">倉儲人員</label></td>
+										<td>
 											<select class="form-control">
-												<option>天瑞科技工業股份公司</option>
+												<option>王小名</option>
 											</select>
-										</td></div>
-										<td></td>
-										<td><label for="inputnum2" class="col-form-label">客戶編號</label></td>
-										<div class="col-md-3"><td>
-											<input type="text" readonly class="form-control" id="inputnum2">
-										</td></div>
+										</td>
+										<td colspan="2"></td>
 									</tr>
-									<tr>
-									<td><label for="input_custom" class="col-form-label">客戶統編</label></td>
-										<td>
-											<input type="text" readonly class="form-control" id="input_custom">
-										</td>
-										<td></td>
-									<td><label for="input_custom_people" class="col-form-label">聯絡人</label></td>
-										<div class="col-md-3"><td>
-											<input type="text" readonly class="form-control" id="input_custom_people">
-										</td></div>
-									</tr>
-									<tr>
-										<td><label for="inputphone" class="col-form-label">電話號碼</label></td>
-										<div class="col-md-3"><td>
-											<input type="text" readonly class="form-control" id="inputphone">
-										</td></div>
-										<td></td>
-										<td><label for="inputtel" class="col-form-label">傳真號碼</label></td>
-										<div class="col-md-3"><td>
-											<input type="text" readonly class="form-control" id="inputtel">
-										</td></div>
-										<td><label class="col-form-label"> </label></td>
-									</tr>	
-									<tr>
-										<td><label for="input_address" class="col-form-label">送貨地址</label></td>
-										<td colspan="2">
-											<textarea id="input_address" class="form-control" rows="1" ></textarea>
-										</td>
-										
-										<td ><label for="input_receipt" class="col-form-label">發票號碼</label></td>
-										<td>
-											<input type="text" class="form-control" id="input_receipt">
-										</td>
-										
-									</tr>	
-									
 								</tbody>	
 								</div>
 							</table>
@@ -279,30 +233,31 @@
 								<thead>
 									<tr>
 									<td colspan="6">
-										<h4 class = "ChText">⊙商品規格</h4>
+										<h4 class = "ChText">原料規格</h4>
 									</td>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-									<td width="5%">
+									<td width="10%">
 									<label for="inputorder" class="col-form-label">序</label>
 									</td>
 									<td width="30%">
-									<label for="input_good_num" class="col-form-label">貨品編號</label>
+									<label for="inputproduct" class="col-form-label">品名</label>
 									</td>
-									<td width="30%"><label for="inputproduct" class="col-form-label">品名</label></td>
+									<td width="30%">
+									<label for="inputsize" class="col-form-label">規格</label>
+									</td>
 									<td width="10%">
 									<label for="inputcount" class="col-form-label">數量</label>
 									</td>
 									<td width="10%">
 									<label for="inputprice" class="col-form-label">單價</label>
 									</td>
-									<td width="13%">
-									<label for="inputsum" class="col-form-label">退貨小計</label>
+									<td width="10%">
+									<label for="inputsum" class="col-form-label">小計</label>
 									</td>
-									<td colspan="2"><label for="input_text_2" class="col-form-label">附註</label></td>
-										
+									<td></td>
 									</tr>
 									<tr>
 									<!--序-->
@@ -311,24 +266,22 @@
 									<script  src="myjs/submit.js"></script>
 									</div> 
 									</td>
-									<!--貨品編號-->
-									<td>
-									<form name="myForm1">
-									<select  class="form-control" onChange="renew(this.selectedIndex);" id = "input_good_num">
-									<option value="">貨品編號
-									<option value="CSCA 063020023">CSCA 063020023
-									<option value="CSCA 063020025">CSCA 063020025
-									<option value="CSLB 080025007">CSLB 080025007
-									</select>
-									<script  src="myjs/selectlist_shopback.js"></script>
-									</td>
 									<!--品名-->
 									<td>
-									<select class="form-control" name="member" id = "inputproduct">
-									<option value="">選取貨品編號</select>
+									<form name="myForm">
+									<select  class="form-control" onChange="renew(this.selectedIndex);" id = "inputproduct">
+									<option value="">品名
+									<option value="外電">外電
+									<option value="油壓缸">油壓缸
+									</select>
+									<script  src="myjs/selectlist_prod.js"></script>
+									</td>
+									<!--規格-->
+									<td>
+									<select class="form-control" name="member" id = "inputsize">
+									<option value="">請由左方選取品名</select>
 									</td>
 									</form>
-																		
 									<!--數量-->
 									<td>
 									<input type="number" class="form-control" id="inputcount">
@@ -337,72 +290,18 @@
 									<td>
 									<input type="text" readonly class="form-control" id="inputprice">
 									</td>
-									<!--退貨小計-->
+									<!--小計-->
 									<td>
 									<input type="text" class="form-control" id="inputsum">
 									</td>
-									<!--附註-->
-									<td width="20%">
-										<textarea id="input_text_2" class="form-control" rows="1" cols="5" ></textarea>
-									</td>
 									<!--送出-->
-									<td width = "5%">
-										<input id="submit" type="button" class="btn btn-primary mb-2" value="add">
+									<td>
+										<input id="submit" type="button" class="btn btn-primary mb-2" value="Submit">
 										<script src="myjs/submit.js"></script>
 									</td>
-									
 									</tr>
 								</tbody>
 							</table>
-							
-							<table class="table" >
-								<thead>
-									<tr>
-									<td colspan="6">
-										<h4 class = "ChText">⊙總計</h4>
-									</td>
-									</tr>
-								</thead>
-								
-								<tbody>
-									<tr>
-										<td width = "20%"><label for="inputtotal" class="col-form-label">合計金額</label></td>
-										<td>
-											<input type="text" readonly class="form-control" id="inputtotal">
-										</td>
-										<td width = "10%"></td>
-										<td width = "20%"><label for="inputax" class="col-form-label">營業稅</label></td>
-										<td>
-											<input type="text" readonly class="form-control" id="inputtax">
-										</td>
-									</tr>
-									<tr>
-										<td width = "20%"><label for="input_back_amount" class="col-form-label">退貨總額</label></td>
-										<td>
-											<input type="text" readonly class="form-control" id="input_back_amount">
-										</td>
-										<td width = "10%"></td>
-										<td width = "20%"><label for="input_give_amount" class="col-form-label">折讓金額</label></td>
-										<td>
-											<input type="text" readonly class="form-control" id="input_give_amount">
-										</td>
-									</tr>
-									<tr>									
-										<td width = "20%"><label for="input_amount_refunded" class="col-form-label">已退金額</label></td>
-										<td>
-											<input type="text" readonly class="form-control" id="input_amount_refunded">
-										</td>
-										<td width = "10%"></td>
-										<td width = "20%"><label for="input_amount_receivable" class="col-form-label">應退帳款</label></td>
-										<td>
-											<input type="text" readonly class="form-control" id="input_amount_receivable">
-										</td>
-									</tr>
-										
-								</tbody>
-							</table>
-							
-							
 							
 							
 						</div>

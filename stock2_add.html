@@ -7,9 +7,12 @@
 		
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-		
+		<!-- Bootstrap CSS calendar -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 		<!-- google fonts -->
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+		<!-- jquery -->
+		<script type="text/javascript" src="http://demo.jb51.net/jslib/jquery/jquery.js"></script>
 		
 		<style>
 			
@@ -33,6 +36,14 @@
 				padding: 5px;
 				height: 80%;
 			}
+			
+			select {
+			  width: 100%;
+			  padding: 16px 20px;
+			  border: 2px solid #ced4da;
+			  border-radius: 4px;
+			  background-color: white;
+			}
 
 			/* Style the footer */
 			footer {
@@ -48,9 +59,71 @@
 				 margin: 5px;
 				 padding: 50px;
 				 text-align: center;
-			}			
+			}		
+
+			input{
+			
+			}
+			
 		</style>
 		
+		
+		
+		
+		<style type="text/css">
+        .dtp-buttons > button.btn {
+            border: none;
+            border-radius: 2px;
+            position: relative;
+            box-shadow: none;
+            color: rgba(0,0,0, 0.87);
+            padding: 5px 16px;
+            font-size: 12px;
+            margin: 10px 1px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            will-change: box-shadow, transform;
+            transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            background: transparent;
+        }
+
+            .dtp-buttons > button.btn:hover,
+            .dtp-buttons > button.btn:focus {
+                background-color: rgba(153, 153, 153, 0.2);
+            } 
+
+           
+         .dtp-picker-calendar > table {
+            width: 100%;
+        } 
+		
+		*{margin: 0px;padding: 0px;} 
+		.cont{width:600px; margin:60px auto 0px;} 
+		#test .item{padding: 10px 6px;border-bottom: 1px solid #666666;} 
+		#test .serial{margin-right: 20px;} 
+		#test .del{padding: 6px;margin-left: 30px;} 
+		
+		table{
+			padding-right:2px;
+		}
+		
+		</style>
+		
+	
+	<!-- calendar -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-material-datetimepicker.css">
+	<!--引用jQuery-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<!--此plugin會影響語系-->
+	<script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.js"></script>
+	<!--引用plugin的js(自行到作者GitHub下載)-->
+	<script src="js/bootstrap-material-datetimepicker.js"></script>
+
 	</head>
 
 	<body>
@@ -110,87 +183,107 @@
 					<div class="col-2">
 						<div class="list-group">
 							<a href="#" class="list-group-item list-group-item-action active list-group-item-secondary">
-								銷貨
+								存貨
 							</a>
-							<a href="out1_list.html" class="list-group-item list-group-item-action">客戶報價單</a>
-							<a href="out2_list.html" class="list-group-item list-group-item-action">訂單</a>
-							<a href="out3_list.html" class="list-group-item list-group-item-action">出貨單</a>	
-							<a href="out4_list.html" class="list-group-item list-group-item-action">銷貨退回單</a>
-							<a href="out5_list.html" class="list-group-item list-group-item-action">收款對帳單明細表</a>						  
+							<a href="stock1_list.html" class="list-group-item list-group-item-action">缺料單</a>
+							<a href="stock2_list.html" class="list-group-item list-group-item-action">領料單</a>
 						</div>
 					</div>
 					<div class="col-9">
 						<div class = "container-fluid justify-content-start">
-							<h1 class = "ChText">收款對帳單明細表</h1>
-							<div class="dropdown-divider"></div>
-							<form>
-								<div class="form-group row">
-									<label for="inputEmail4" class="col-form-label">日期</label>
-									<div class="col-md-3">
-									  <input type="email" class="form-control" id="inputEmail4">
-									</div>
-									<label for="inputPassword4" class="col-form-label">客戶名稱</label>
-									<div class="col-md-3">
-									  <input type="password" class="form-control" id="inputPassword4">
-									</div>
-									<div class="col-md-1">
-									  <button type="submit" class="btn btn-success">查詢</button>
-									</div>
-									<div class="col-md-1">
-									  <button type="submit" class="btn btn-info"><a href="out5_add.html" style="color:white;">新增</a></button>
-									</div>
-								</div>
-							</form>
+							<h1 class = "ChText">領料單</h1>
+							
 							<table class="table">
-							    <thead>
-									<tr>
-										<th scope="col">#</th>
-										<th scope="col">日期</th>
-										<th scope="col">客戶名稱</th>
-										<th scope="col">單據編號</th>
-										<th scope="col"></th>
-									</tr>
+								<div class="form-group row">
+								<thead>
+									<td colspan = "4">
+									<h4 class = "ChText">⊙領料申請</h4>
+									</td>
+									<td><label class="col-form-label"> </label></td>
+									<div class="col-md-3"><td></td></div>
+									<td><label class="col-form-label"> </label></td>
+									<div class="col-md-3"><td></td></div>
 								</thead>
 								<tbody>
+								
 									<tr>
-										<th scope="row">1</th>
-										<td>2020/05/28</td>
-										<td>興勤</td>
-										<td>20200528001</td>
-										<td><button type="submit" class="btn btn-info">修改</button> <button type="submit" class="btn btn-danger">刪除</button></td>
+									<td width="15%">
+									<label for="inputcalendar" class="col-form-label">申請日期</label>
+									</td>
+									<td width="15%">
+									<label for="inputproduct_num" class="col-form-label">料號</label>
+									</td>
+									<td width="15%">
+									<label for="inputcount" class="col-form-label">申請數量</label>
+									</td>
+									<td width="20%">
+									<label for="input_rel_count" class="col-form-label">實際發料數量</label>
+									</td>
+									<td width="10%">
+									<label for="input_unit" class="col-form-label">部門單位</label>
+									</td>
+									<td  colspan="2">
+									<label for="inputprice" class="col-form-label">用途說明</label>
+									</td>
+									
 									</tr>
 									<tr>
-									    <th scope="row">2</th>
-										<td>2020/05/25</td>
-										<td>宇梏</td>
-										<td>20200525002</td>
-										<td><button type="submit" class="btn btn-info">修改</button> <button type="submit" class="btn btn-danger">刪除</button></td>
+									<!--申請日期-->
+									<td>
+										<input type="text" class="form-control" placeholder="請選擇日期" id="inputcalendar_2" />
+										<script src="myjs/calendar.js"></script>
+									</td>
+									<!--料號-->
+									<td>
+									<input type="text" class="form-control" id="inputproduct_num">
+									</td>
+									<!--申請數量-->
+									<td>
+									<input type="number" class="form-control" id="inputcount">
+									</td>
+									<!--實際發料數量-->
+									<td>
+									<input type="number" class="form-control" id="input_rel_count">
+									</td>
+									<!--部門單位-->
+									<td>
+									<input type="text" class="form-control" id="input_unit">
+									</td>
+									<!--單價-->
+									<td >
+										<textarea id="inputtel" class="form-control" rows="1" cols="15"></textarea>
+									</td>
+									
+									<!--送出-->
+									<td width="5%">
+										<input id="submit" type="button" class="btn btn-primary mb-2" value="add">
+										<script src="myjs/submit.js"></script>
+									</td>
+									
 									</tr>
-									<tr>
-									    <th scope="row">3</th>
-										<td>2020/05/25</td>
-										<td>日月光</td>
-										<td>20200525001</td>
-										<td><button type="submit" class="btn btn-info">修改</button> <button type="submit" class="btn btn-danger">刪除</button></td>
-									</tr>
-							    </tbody>
+								</tbody>	
+								</div>
 							</table>
+							
+							
+							
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		
+		<!--
 		<footer>
 			<p>APP Course Example 2019.10.17</p>
 		</footer>
-		
+		-->
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<!--
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-		
+		-->
 	</body>
 
 </html>
